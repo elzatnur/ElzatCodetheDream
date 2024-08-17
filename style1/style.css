@@ -1,55 +1,147 @@
 body{
-    background-color: rgb(99, 51, 100);
-    margin: 4;
-    padding: 0;
+  flex-wrap:wrap;
+  background-color: rgb(162, 102, 143);
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 100%;
+  min-width: 300px;
+  max-width: 1020px;
 }
-h1{
-    color: blue;
-    font-weight: 200;
-    text-align: center;
-    padding-top: 13;
-    border-style: ridge;
-    border-color: black;
-    border-radius: 50;
-    border-style: dashed;
+/*smaller size screens*/
+
+.container{
+  max-width: 1020px;
+  min-width: 320px;
+  color:rgb(9, 12, 12);
+  margin: 0 auto;
 }
-h2{
-    color:rgb(99, 51, 100);
-    font-size: large;
-    padding-left: 13px;
-    border-top: 13px;
+/* Larger screens */
+.experience-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 30em));
+  gap:10px;
 }
-p {
-    color: 333;
-    background: whitesmoke;
-    width: 100;
-    margin: 0;
-    border-color: greenyellow;
-    border-radius: 0;
-}
-img { border-radius: 50;
-    margin-inline-start: auto;
-    border-width: 13px;
-    border-color: rgb(123, 164, 60);
+
+.ex-item{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: rgb(45, 131, 131);
+  border-radius: 1em;
+  padding: 1em;
+  width: 50em;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 30em));
 
 }
-i{
-    padding-top: 10;
-    border-radius: 50;
-
+.ex-part{
+  display:flex;
+  flex-direction: column;
 }
-h3{
-    color:rgb(99, 51, 100);
-    font-size: large;
-    padding-left: 13px;
-    border-top: 13px;
 
-}
-h2{color:rgb(99, 51, 100);
-    font-size: large;
-    padding-left: 13px;
-    border-top: 13px;
 
+#about {
+  scroll-margin-top:10%;
 }
+#experience{
+ scroll-margin-top:3%;
+}
+#skills{
+  padding-top: 2em;
+  scroll-margin-top: 3em;
+}
+#projects{
+  scroll-margin-top: 3;
+}
+#connect{
+  scroll-margin-top: 3;
+}
+#about-content{
+  text-decoration: solid;
+  text-align: left;
+  min-width: 50;
+}
+.about-container{
+  max-width: 1020px;
+  text-decoration:black ;
+  font-style:normal;
+  font-size: 1em;
+  font-family: fantasy;
+  outline-style: solid;
+}
+.experience-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2%;
+}
+.sticky-header {
+  position: sticky;
+  top: 0;
+  background-color: #0f0f0f;
+  color: #fff;
+  text-align: center;
+  padding: 5;
+  z-index: 20000;
+  width:100%;
+}
+.sticky-header ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  list-style-type: none;
+  gap:10;
+  scroll-margin-top:2px;
+  margin: auto
+}
+.sticky-header ul li a {
+  color: rgb(215, 21, 180);
+}
+.experience-container div{
+  flex-wrap: wrap;
+  text-align: justify;
+  background-color: rgb(215, 17, 17);
+  border-style: solid;
+  border-color: #fff;
+}
+.other-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 18;
+  scroll-margin-top: 3em;
+}
+
+.Skills ul{
+  display:flex;
+  position:sticky;
+  background-color: #1d178b;
+  color: #fff
+  padding 75 0;
+  text-align: center;
+}
+
+.navigation{
+  position: fixed;
+  top:0;
+  display: flex;
+  width: 100;
+  justify-content: space-between;
+  list-style-type: none;
+  margin: auto
+}
+
+.navigation ul li a {
+  color: rgb(216, 15, 179);
+}
+@media only screen and (min-width: 320px){
+  .experience-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media only screen and (min-width: 1020px){
+  .experience-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+
 
 
