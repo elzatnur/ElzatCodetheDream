@@ -47,15 +47,17 @@ function createMessage(message){
   
 }
 
-const messageForm = document.getElementById("leave_message");
-messageForm.addEventListener("submit", (e) => {
+const messageForm = document.querySelector('[name="leave_message"]');
+
+console.log(messageForm);
+messageForm.addEventListener("submit", (e)=>{
   e.preventDefault();
   const userN = e.target.userName.value;
   const email = e.target.email.value;
-  const message = e.target.userMessage.value;
+  const message = e.target.usersMessage.value;
 
   const listItem = createMessage(`${userN} (${email}): ${message}`);
-  const messageList = document.getElementById("message_list");
+  const messageList = document.getElementById("messages_list");
   messageList.appendChild(listItem);
   e.target.reset();
 });
@@ -78,6 +80,8 @@ document.getElementById("end-editing").addEventListener("click", function() {
   document.getElementById("edit-button").style.display = "inline";  
   document.getElementById("end-editing").style.display = "none";  
 });
+
+
 
 
 

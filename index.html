@@ -71,27 +71,28 @@
       <h2> 
         Please fill out the form below
       </h2>
-      <br id="leave_message"> 
-        <label for="username"> Name: </label></br>
-        <input type="text" name="usrName" required /></br> 
+
+      <form name="leave_message">
+     
+        <label for="username"> Name: </label></id=>
+        <input for="text" name="userName" required /></br> 
         <label for="email"> Email </label></br>  
         <input type="email" name="email" required /></br> 
         <label for="usersMessage"> Message: </label></br> 
         <textArea type="text" name="usersMessage" required ></textArea></br> 
         <button type="submit"> Submit </button></br> 
+        
+        <section id="messages">
+          <ul id="messages_list"> </ul>
+        </section>
       </form>
-    </section>
-   
 
-    <div id="container">
+   <div id="container">
       <p id="edit"><b> Click "Edit" button to edit content. </ b></p>
       <button type="submit" id="edit-button">Edit</button>
       <button type="submit" id="end-editing">Done</button>
       </div>
-      <section id="messages">
-        <h2> Thank you for connecting with us! </h2>
-        <ul id="messages_list"> </ul>
-      </section>
+
     <script src="javasc/index.js"></script>
   </body>
 </html>

@@ -1,7 +1,7 @@
 body {
   flex-wrap:wrap;
   font-family: 'Times New Roman', Times, serif;
-  background-color: rgb(228, 219, 226);
+  background-color: rgb(121, 177, 220);
   margin: auto;
   padding: auto;
   color: #0e0c0c;
@@ -48,7 +48,7 @@ h3 {
   position: sticky;
   top: 0;
   background-color: #252a0b;
-  color: #fff;
+  color: #25b64e;
   text-align: center;
   padding: 5;
   z-index: 20000;
