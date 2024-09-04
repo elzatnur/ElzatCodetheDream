@@ -81,6 +81,46 @@ document.getElementById("end-editing").addEventListener("click", function() {
   document.getElementById("end-editing").style.display = "none";  
 });
 
+fetch("https://api.github.com/users/elzatnur/repos")
+.then((response) => {
+  if(!response.ok){
+    throw new Error("Request failed");
+  }
+  return response.json();
+})
+
+
+.then((data)=> {
+  console.log("json data =" , data);
+  repositories = [...data];
+  console.log("repositories array" , repositories);
+
+
+  //selecting the project
+  const projectSection = document.getElementById("projects");
+  let projectList = document.createElement('ul');
+  projectSection.appendChild(projectList);
+  for(let repository of repositories){
+    let project = document.createElement('li');
+    project.innerText = repository.name;
+    projectList.appendChild(project);
+
+  }
+
+})
+.catch((error)=> {
+  if(error instanceof SyntaxError){
+    console.error("Unparsable error from server");
+  } else {
+    console.error("Error fetching data: ", error.message);
+  }
+})
+
+
+
+
+
+
 
 
 
