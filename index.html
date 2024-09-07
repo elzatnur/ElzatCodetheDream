@@ -1,103 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style1/style.css" />
-    <title>My first website</title>
-  </head>
-  <br>
-    <nav class="sticky-header">
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="#projects">Project</a></li>
+<!-- <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style1/style.css" />
+  <link rel="stylesheet" href="link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <title>My First Website</title>
+</head> -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style1/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>My First Website</title>
+</head>
+<body>
+  <nav class="sticky-header">
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#projects">Projects</a></li>
+    </ul>
+  </nav>
 
-          </ul>
-    </nav>
+  <div class="container">
+    <header class="header">
+      <h1>Ela Nur</h1>
+    </header>
 
-    <br class="container">
-      <div class="header">
-        <h1>Ela Nur</h1>
-      </div>
+    <section id="about" class="section-about">
+      <h2>All About Me</h2>
+      <p>
+        I am Ela, network engineer with knowledge of coding and testing. I enjoy working with hardware and software. 
+        To me, every line of code is a canvas for innovation, and every test case is a challenge to master. Each moment is an opportunity to push boundaries, perfect solutions, and drive excellence.
+        My passion for continuous learning and growth transforms me from hardware to software into a true architect of digital excellence. I see every project as a chance to create, enhance, and inspire through the art of coding and testing.
+      </p>
+    </section>
 
-      <div class="section-about">
-        <h2>All about me</h2>
-        <p>
-            A versatile, hardworking individual with 2 years of experience in IT industry 
-            with knowledge of networking, Cisco Products, coding skills and Test automation. 
-            Enjoys working with hardware/software environment.
-        </p>
-      </div>
-  
-      <div class="section-experience">
-        <h2>Experience</h2>
-        <ul> 
+    <section id="experience" class="section-experience">
+      <h2>Experience</h2>
+      <ul>
         <li>
-
-            <h3>QA automation engineer intern </h3>
-            <p> Oct 2023 - Present</p>
-            <p>
-                Performed functional testing of web application 
-                elements based on specific test data(manually/automated)
-            </p>
-    
-            <h3> Cisco lab engineer </h3>
-            <p> May 2022 - March 2024</p>
-            <p> Layer 1, 2 and 3 setup of network devices based on provided 
-                network topologies and install software to recreate and debug 
-                issues for all of Cisco’s customer support engineer.</p>  
-          </li>
-        </ul>
-      </div>
-      <div class="section-skills">
-        <h2>Skills</h2>
-        <ul class="skills">
-          <li>HTML</li>
-          <li>CSS</li>
-          <li>JavaScript</li>
-          <li>Version Control (Git)</li>
-     </ul>
-      </div>
-    
-    <section> 
-      <h2> Current time </h2>
-      <p id="clock"> </p>
+          <h3>SDET Engineer</h3>
+          <p>Oct 2023 - Present</p>
+          <p>
+            Performed functional testing of web application elements 
+            based on specific test data (manually and automated).
+          </p>
+        </li>
+        <li>
+          <h3>Network Lab Engineer</h3>
+          <p>May 2022 - March 2024</p>
+          <p>
+            Layer 1, 2, and 3 setup of network devices based on provided 
+            network topologies and software installation to recreate and debug 
+            issues for Cisco’s customer support engineers.
+          </p>
+        </li>
+      </ul>
     </section>
 
-    <section id="project_section">
-      <h2 id="projects"> Projects </h2>
-      <ul id="projects-list"> </ul>
+    <section id="skills" class="section-skills">
+      <h2>Skills</h2>
+      <ul class="skills">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>Version Control (Git)</li>
+      </ul>
     </section>
 
-    <br>
-      <h2> 
-        Please fill out the form below
-      </h2>
+    <section id="projects" class="section-projects">
+      <h2>Projects</h2>
+      <ul id="projects-list"></ul>
+    </section>
 
+    <section class="contact-form">
+      <h2>Leave a message </h2>
       <form name="leave_message">
-     
-        <label for="username"> Name: </label></id=>
-        <input for="text" name="userName" required /></br> 
-        <label for="email"> Email </label></br>  
-        <input type="email" name="email" required /></br> 
-        <label for="usersMessage"> Message: </label></br> 
-        <textArea type="text" name="usersMessage" required ></textArea></br> 
-        <button type="submit"> Submit </button></br> 
-        
-        <section id="messages">
-          <ul id="messages_list"> </ul>
-        </section>
+        <label for="username">Name:</label>
+        <input type="text" name="userName" required />
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" required />
+
+        <label for="usersMessage">Message:</label>
+        <textarea name="usersMessage" required></textarea>
+
+        <button type="submit">Submit</button>
       </form>
 
-   <div id="container">
-      <p id="edit"><b> Click "Edit" button to edit content. </ b></p>
-      <button type="submit" id="edit-button">Edit</button>
-      <button type="submit" id="end-editing">Done</button>
-      </div>
+      <section id="messages">
+        <ul id="messages_list"></ul>
+      </section>
 
-    <script src="javasc/index.js"></script>
-  </body>
+    <!-- <section id="edit-section">
+      <p><br>"Coding is the art of turning imagination into reality. Each line of code is a step closer to creating something amazing."<\br></p>
+      <button type="button" id="edit-button">Edit</button>
+      <button type="button" id="end-editing">Done</button>
+    </section> -->
+
+    <section> 
+      <div id="container">
+        <p id="edit"><b> "Coding is the art of turning imagination into reality. Each line of code is a step closer to creating something amazing."</ b></p>
+        <button type="submit" id="edit-button">Edit</button>
+        <button type="submit" id="end-editing">Done</button>
+        </div>
+     </section>
+  
+      <section id="contact">
+      <h2>Current Time</h2>
+      <p id="clock"></p>
+      <div class="social-contacts">
+        <a href="https://github.com/elzatnur" target="_blank" title="GitHub">
+          <i class="fa-brands fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/ela-nur-ab5739293/" target="_blank" title="LinkedIn">
+            <i class="fa-brands fa-linkedin"></i>
+        </a>
+    </div>
+    </section>
+   
+  <script src="javasc/index.js"></script>
+</body>
 </html>

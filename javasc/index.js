@@ -1,67 +1,51 @@
-const skill = ["Networking", "Java", "Automation"];
-console.log(skill);
-const getSkills = document.querySelector('#section-skills');
-console.log(getSkills);
-var skillList = document.querySelector(".skills")
-console.log(skillList);
-for(let i=0; i<skill.length; i++){
-  var s= document.createElement("li");
-  s.innerText= skill[i];
-  console.log(s);
-  skillList.appendChild(s);
-  console.log(skillList);
-}
+const skills = ["Networking", "Java", "Automation"];
+const skillList = document.querySelector(".skills");
 
+skills.forEach(skill => {
+  const skillItem = document.createElement("li");
+  skillItem.innerText = skill;
+  skillList.appendChild(skillItem);
+});
+
+// Create and append footer
 const body = document.querySelector("body");
 const footer = document.createElement('footer');
 footer.className = "foot";
 body.appendChild(footer);
-console.log(footer);
-const getFoot = document.querySelector('.foot');
-const today = new Date();
-const year = today.getFullYear();
-const copyright = document.createElement('p');
-const copyrightSymbol= '&#169';
-var copyRightText = copyrightSymbol + "Ela Nur" + year;
-getFoot.innerHTML= copyRightText;
 
-//function for time
-function displayTime(){
-  const clock = document.getElementById("clock");
-  const time = new Date();
-  const hours = time.getHours().toString().padStart(2, "0");
-  const min = time.getMinutes().toString().padStart(2, "0");
-  const sec = time.getSeconds().toString().padStart(2, "0");
-  clock.textContent = `${hours}:${min}:${sec}`;
-}
-//adding element li
-function createMessage(message){
+// Add copyright information to footer
+const year = new Date().getFullYear();
+footer.innerHTML = `&copy; Ela Nur ${year}`;
+
+// Function to create and append a new message
+function createMessage(message) {
   const listItem = document.createElement("li");
   listItem.innerHTML = message;
+
   const removeButton = document.createElement("button");
   removeButton.innerText = "Remove";
   removeButton.type = "button";
-  removeButton.addEventListener("click", ()=> listItem.remove());
+  removeButton.addEventListener("click", () => listItem.remove());
+
   listItem.appendChild(removeButton);
   return listItem;
-  
 }
 
+// Handle message form submission
 const messageForm = document.querySelector('[name="leave_message"]');
-
-console.log(messageForm);
-messageForm.addEventListener("submit", (e)=>{
+messageForm.addEventListener("submit", (e) => {
   e.preventDefault();
-  const userN = e.target.userName.value;
-  const email = e.target.email.value;
-  const message = e.target.usersMessage.value;
-
-  const listItem = createMessage(`${userN} (${email}): ${message}`);
+  const { userName, email, usersMessage } = e.target.elements;
+  const messageText = `${userName.value} (${email.value}): ${usersMessage.value}`;
+  
   const messageList = document.getElementById("messages_list");
+  const listItem = createMessage(messageText);
   messageList.appendChild(listItem);
+
   e.target.reset();
 });
- 
+
+// Update time every second
 setInterval(displayTime, 1000);
 displayTime();
 
@@ -81,41 +65,33 @@ document.getElementById("end-editing").addEventListener("click", function() {
   document.getElementById("end-editing").style.display = "none";  
 });
 
+// Fetch GitHub repositories
 fetch("https://api.github.com/users/elzatnur/repos")
-.then((response) => {
-  if(!response.ok){
-    throw new Error("Request failed");
-  }
-  return response.json();
-})
+  .then(response => {
+    if (!response.ok) {
+      throw new Error("Request failed");
+    }
+    return response.json();
+  })
+  .then(repositories => {
+    const projectList = document.createElement('ul');
+    const projectSection = document.getElementById("projects");
+    projectSection.appendChild(projectList);
 
-
-.then((data)=> {
-  console.log("json data =" , data);
-  repositories = [...data];
-  console.log("repositories array" , repositories);
-
-
-  //selecting the project
-  const projectSection = document.getElementById("projects");
-  let projectList = document.createElement('ul');
-  projectSection.appendChild(projectList);
-  for(let repository of repositories){
-    let project = document.createElement('li');
-    project.innerText = repository.name;
-    projectList.appendChild(project);
-
-  }
-
-})
-.catch((error)=> {
-  if(error instanceof SyntaxError){
-    console.error("Unparsable error from server");
-  } else {
+    repositories.forEach(repository => {
+      const project = document.createElement('li');
+      project.innerText = repository.name;
+      projectList.appendChild(project);
+    });
+  })
+  .catch(error => {
     console.error("Error fetching data: ", error.message);
+  });
+  function displayTime() {
+    const clock = document.getElementById("clock");
+    const time = new Date();
+    clock.textContent = time.toLocaleTimeString("en-US", { hour12: false });
   }
-})
-
 
 
 
